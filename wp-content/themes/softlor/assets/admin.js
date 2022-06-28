@@ -1,0 +1,1 @@
+jQuery(".softlor_datepicker").flatpickr({});
