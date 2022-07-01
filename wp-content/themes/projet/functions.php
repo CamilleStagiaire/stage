@@ -10,9 +10,11 @@ function projet_supports()
     add_theme_support('html5');
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
+   
 
    
     add_image_size('slider',1024, 424, true);
+    add_image_size('banner',1024, 200, true);
 }
 
 function projet_register_assets()
@@ -25,8 +27,10 @@ function projet_register_assets()
         wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', [], false, true);  // enregistrement du script jquery
     }
     wp_enqueue_style('bootstrap'); // utilisation du style
-    wp_enqueue_style('projet_style', get_stylesheet_uri());
+    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.min.css', [], false, 'all'); 
+    wp_enqueue_style('projet_style', get_stylesheet_uri(), ['bootstrap','animate' ]);
     wp_enqueue_script('bootstrap'); // utilisation des scripts
+    wp_enqueue_script('carrousel', get_template_directory_uri() . '/assets/carrousel.js', ['bootstrap', 'jquery'], false, true); 
 }
 
 
@@ -47,6 +51,25 @@ function projet_menu_link_class(array $attrs): array
     return $attrs;
 }
 
+function softlor_init()
+{
+   
+
+    register_post_type('icone', [
+        'label' => 'Icone',
+        'public' => true,
+        'menu_position' => 3,
+        'menu_icon' => 'dashicons-building',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'show_in_rest' => true, // pour avoir l'éditeur visuel
+        'has_archive' => true,
+
+    ]);
+
+}
+
+
+add_action('init', 'softlor_init');
 add_action('after_setup_theme', 'projet_supports');
 add_action('wp_enqueue_scripts', 'projet_register_assets');
 add_filter('document_title_separator', 'projet_title_separator');
@@ -77,6 +100,7 @@ function carrousel_init () {
 		'publicly_queryable' => false,
         'show_ui' => true,
         'show_in_menu' => true,
+        'show_in_rest' => true,
         'query_var' => true,
         'rewrite' => true,
 		'capability_type'=>'post',
@@ -86,7 +110,7 @@ function carrousel_init () {
         'menu_icon' => 'dashicons-embed-photo',
         'exclude_from_search' => true,
 		'supports' => array('title', 'page-attributes', 'thumbnail', 'excerpt'),
-        'show_in_rest' => true,
+       
         
 	);
     register_post_type('carrousel', $args);	

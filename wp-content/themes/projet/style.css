@@ -2,6 +2,7 @@
  Theme Name: Projet
  Author: Camille
 */
+
 section {
 
     padding-left: 0px !important;
@@ -10,4 +11,34 @@ section {
 
 section img {
     opacity: 0.5;
+
 }
+
+section h1 {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+section h3 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.30);
+    padding: 10px 3%;
+    
+}
+
+.animate__animated.animate__bounce {
+    animation-duration: 3s;
+}
+
+#icone img:hover {
+    display: inline-block;
+    
+  
+    animation: jello; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+  }
+
+  

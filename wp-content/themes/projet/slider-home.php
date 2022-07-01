@@ -38,12 +38,11 @@ if ($slider_query->have_posts()) : ?>
                 
                 
                 ?>
-                    <div class="carousel-item<?= $theclass; ?>">
+                    <div class="carousel-item<?= $theclass; ?>" data-bs-interval="5000">
                         <img src="<?= $thumbnail_src ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1><?php the_title(); ?></h1>
-                            <h3><?php the_excerpt(); ?></h3>
-                            <a href="<?php the_permalink(); ?>"></a>
+                            <h1 class="animate__animated animate__bounce"><?php the_title(); ?></h1>
+                            <h3 class="animate__animated animate__bounce"><?php the_excerpt(); ?></h3>
                         </div>
                     </div>
 
