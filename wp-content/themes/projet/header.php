@@ -13,8 +13,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" style="background-color: <?= get_theme_mod('header_background'); ?>!important">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="index.php">
-        <img src="<?= get_template_directory_uri();?>/images/terre.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="http://localhost/stage/wordpress/">
+        <img src="<?= get_template_directory_uri();?>/images/logoSoftlor.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
         <?php bloginfo('name') ?>
       </a>
 
@@ -34,4 +34,4 @@
     </div>
   </nav>
 
-  <main class="container-fluid"></main>
+  <main class="container-fluid">

@@ -79,17 +79,17 @@ add_filter('nav_menu_link_attributes', 'projet_menu_link_class');
 function carrousel_init () {
 
 	$labels = array(
-        'name' => 'Image Caroussel Accueil',
+        'name' => 'Caroussel d\'images Accueil',
         'singular_name' => 'Image accueil',
         'add_new' => 'Ajouter une image',
-        'add_new_item' => 'Ajouter une image accueil',
-        'edit_item' => 'Modifier une image accuei',
+        'add_new_item' => 'Ajouter une image',
+        'edit_item' => 'Ajouter une image',
         'new_item' => 'Nouveau',
         'all_items' => 'Voir la liste',
         'view_item' => 'Voir l\'élément',
         'search_items' => 'Rechercher une image',
         'not_found' =>  'Aucun élément trouvé',
-        'not_found_in_trash' => 'Aucun éléméntSlide dans la corbeille',
+        'not_found_in_trash' => 'Aucun élémént dans la corbeille',
         'menu_name' => 'Slider Frontal',
         
       );
@@ -146,4 +146,13 @@ function carrousel_change_slides_order($query) {
     }
 }
 add_action('pre_get_posts','carrousel_change_slides_order');
+
+/*Contact form 7 remove span*/
+add_filter('wpcf7_form_elements', function(string $content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    $content = str_replace('<br />', '', $content);
+        
+    return $content;
+});
 

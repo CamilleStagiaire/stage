@@ -10,12 +10,12 @@ query_posts(array(
 ) );
 ?>
 
-<div id="icones" class="row justify-content-center">
+<div class="row justify-content-around">
 
 <?php while (have_posts()) : the_post(); ?>
-	<div id="hover" class="col-auto">
+	<div class="col-auto p-5 ">
 	<p><?php the_content(); ?></p>
-	<?php the_title(); ?>
+	<h4 class="text-center"><?php the_title(); ?></h4>
 		<div class="text">
 			<!-- <h2><b><a href="<//?php the_permalink() ?>"><//?php the_title(); ?></a></b></h2> -->
 </p>

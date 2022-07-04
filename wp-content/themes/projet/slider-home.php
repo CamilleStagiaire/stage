@@ -9,7 +9,7 @@ $slider_query = new WP_Query($args);
 
 if ($slider_query->have_posts()) : ?>
 
-    <section class="container-fluid">
+    <section id="car" class="container-fluid">
         <div id="slider-01" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <?php $indicator_index = 0;
@@ -22,7 +22,7 @@ if ($slider_query->have_posts()) : ?>
             </div>
             <?php rewind_posts(); ?>
 
-            <div class="carousel-inner">
+            <div class="carousel-inner ">
 
                 <?php $active_test = true;
                 while ($slider_query->have_posts()) : $slider_query->the_post();
@@ -41,8 +41,8 @@ if ($slider_query->have_posts()) : ?>
                     <div class="carousel-item<?= $theclass; ?>" data-bs-interval="5000">
                         <img src="<?= $thumbnail_src ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1 class="animate__animated animate__bounce"><?php the_title(); ?></h1>
-                            <h3 class="animate__animated animate__bounce"><?php the_excerpt(); ?></h3>
+                            <h1 class="animate"><?php the_title(); ?></h1>
+                            <h3 class="animate"><?php the_excerpt(); ?></h3>
                         </div>
                     </div>
 
