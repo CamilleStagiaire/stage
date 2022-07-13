@@ -1,7 +1,250 @@
 /*
-Theme Name: Softlor
+ Theme Name: Softlor
+ Text Domain: softlor
+ Version: 0.1
+ Requires at least; 6.0
+ Requires PHP: 7.4
+ Author: Camille
 */
 
+@font-face {
+  font-family: 'robotoregular';
+  src: url('assets/fonts/roboto/roboto-regular-webfont.eot');
+  src: url('assets/fonts/roboto/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/roboto/roboto-regular-webfont.woff2') format('woff2'),
+    url('assets/fonts/roboto/roboto-regular-webfont.woff') format('woff'),
+    url('assets/fonts/roboto/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oswald_regularregular';
+  src: url('assets/fonts/oswald/oswald-regular-webfont.eot');
+  src: url('assets/fonts/oswald/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/oswald/oswald-regular-webfont.woff2') format('woff2'),
+    url('assets/fonts/oswald/oswald-regular-webfont.woff') format('woff'),
+    url('assets/fonts/oswald/oswald-regular-webfont.svg#oswald_regularregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oxygenregular';
+  src: url('assets/fonts/oxygen/oxygen-webfont.eot');
+  src: url('assets/fonts/oxygen/oxygen-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/oxygen/oxygen-webfont.woff2') format('woff2'),
+    url('assets/fonts/oxygen/oxygen-webfont.woff') format('woff'),
+    url('assets/fonts/oxygen/oxygen-webfont.svg#oxygenregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
 body {
-    background-color: brown;
+  font-family: 'robotoregular', Helvetica, Arial, serif;
+}
+
+h1 {
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif;
+}
+
+/* barre de navigation */
+
+nav {
+  font-size: 1.2em;
+  font-family: 'oxygenregular', Helvetica, Arial, serif
+}
+
+nav a {
+  color: white;
+}
+
+nav a.nav-link {
+  color: white;
+}
+
+nav a:hover {
+  color: white;
+  animation: tada;
+  animation-duration: 2s;
+}
+
+nav a.nav-link:hover {
+  color: white;
+
+  animation: tada;
+  animation-duration: 2s;
+  text-decoration: underline;
+}
+
+/* divider*/
+.divider {
+  width: 100px;
+  height: 2px;
+  background-color: #0369b1;
+  margin: 0 auto 20px;
+}
+
+/* footer */
+footer p {
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+}
+
+footer .nav-link {
+  color: black;
+  font-weight: bolder;
+}
+
+footer .nav-link:hover {
+  color: white
+}
+
+/* -------------------------------------------
+FRONT-PAGE
+------------------------------------------- */
+
+/* bloc slider */
+section h1 {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+section p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.30);
+  padding: 10px 3%;
+}
+
+section img {
+  opacity: 0.5;
+}
+
+.animate {
+  animation: fadeInRightBig;
+  animation-duration: 2s;
+}
+
+/* bloc icones */
+#icone img {
+  opacity: 0.5;
+}
+
+#icone h4 {
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif;
+  color: #0369b1;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+#icone img:hover {
+  animation: rotateIn;
+  animation-duration: 2s;
+}
+
+.texte h4 {
+  line-height: 50px;
+}
+
+#logo img {
+  height: 200px;
+  width: 200px;
+}
+
+.logo {
+  animation: flip;
+  animation-duration: 3s;
+}
+
+/* image nous contacter */
+.fixed-bg {
+  background-image: url("http://localhost/stage/wordpress/wp-content/themes/softlor/images/finger.jpg");
+  opacity: 0.9;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#contact {
+  font-family: 'oxygenregular', Helvetica, Arial, serif
+}
+
+#contacts {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#contact1 {
+  color: aliceblue;
+  text-shadow: 0 4px 8px rgb(243, 240, 240)
+}
+
+#contact2 {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: black;
+}
+
+#contact3 {
+  color: aliceblue;
+  text-shadow: 0 4px 8px rgb(243, 240, 240);
+}
+
+/*animation de la photo*/
+.contact1 {
+
+  animation: zoomInLeft;
+  animation-duration: 2s;
+}
+
+.contact2 {
+
+  animation: zoomIn;
+  animation-duration: 2s;
+
+}
+
+.contact3 {
+  color: white;
+  animation: zoomInRight;
+  animation-duration: 2s;
+}
+
+
+/* -------------------------------------------
+PAGE AVEC BANNIERE
+------------------------------------------- */
+#banniere .banniere p {
+  animation: bounceInDown;
+  animation-duration: 2s;
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.30);
+  padding: 10px 3%;
+}
+
+.wp-block-group__inner-container {
+  margin: 50px;
+}
+
+#site {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.site:nth-child(2n+1) {
+  animation: bounceInLeft;
+  animation-duration: 2s;
+}
+
+
+.site:nth-child(2n) {
+  animation: bounceInRight;
+  animation-duration: 2s;
+  background-color: white;
 }

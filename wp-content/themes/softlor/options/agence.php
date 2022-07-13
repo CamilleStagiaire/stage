@@ -1,5 +1,6 @@
 <?php
 
+// Gestion des horaires / adresse / téléphones dans le meunu réglage Agence
 class AgenceMenuPage
 {
     const GROUP = 'agence_options';
@@ -8,23 +9,14 @@ class AgenceMenuPage
     {
         add_action('admin_menu', [self::class, 'addMenu']);
         add_action('admin_init', [self::class, 'registerSettings']);
-        add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
-    }
-
-    public static function registerScripts($suffix)
-    {
-        if ($suffix === 'settings_page_agence_options') {
-            wp_register_style('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', [], false);
-            wp_register_script('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', [], false, true);
-            wp_enqueue_script('softlor_admin', get_template_directory_uri() . '/assets/admin.js', ['flatpickr'], false, true);
-            wp_enqueue_style('flatpickr');
-        }
     }
 
     public static function registerSettings()
     {
         register_setting(self::GROUP, 'agence_horaire');
-        register_setting(self::GROUP, 'agence_date');
+        register_setting(self::GROUP, 'agence_adresse');
+        register_setting(self::GROUP, 'agence_telephone');
+
         add_settings_section('agence_options_section', 'Paramètres', function () {
             echo 'Vous pouvez gérer les paramètres';
         }, self::GROUP);
@@ -33,11 +25,16 @@ class AgenceMenuPage
             <textarea name="agence_horaire" cols="30" rows="10" style="width: 100%;"><?= esc_html(get_option('agence_horaire')) ?></textarea>
         <?php
         }, self::GROUP, 'agence_options_section');
-        add_settings_field('agence_options_date', "Date d'ouverture", function () {
+        add_settings_field('agence_options_adresse', "Adresse", function () {
         ?>
-            <input type="text" name="agence_date" value="<?= esc_attr(get_option('agence_date')) ?>" class="softlor_datepicker">
+             <textarea name="agence_adresse" cols="30" rows="10" style="width: 100%;"><?= esc_html(get_option('agence_adresse')) ?></textarea>
         <?php
         }, self::GROUP, 'agence_options_section');
+        add_settings_field('agence_options_telephone', "Téléphones", function () {
+            ?>
+                 <textarea name="agence_telephone" cols="30" rows="10" style="width: 100%;"><?= esc_html(get_option('agence_telephone')) ?></textarea>
+            <?php
+            }, self::GROUP, 'agence_options_section');
     }
 
     public static function addMenu()

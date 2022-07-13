@@ -1,0 +1,86 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: 10 July 2022 9h59
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.4.7
+WORDPRESS:	6.0
+PHP INFO:	7.4.26 | SAPI: apache2handler
+SERVER:		Apache/2.4.51 (Win64) PHP/7.4.26 mod_fcgid/2.3.10-dev 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 4294967296 (128M default) 
+MEMORY STACK: 2MB
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported
+TABLES: total:34 | filtered:0 | create:34
+FILTERED: []
+SQL CREATED: 20220710_softlor_39b5f9b427fb6a3f8398_20220710095924_database.sql
+SQL FILE SIZE: 989.79KB (1013545)
+SQL FILE TIME: 2022-07-10 09:59:38
+SQL RUNTIME: 0.95 sec.
+
+********************************************************************************
+ARCHIVE (ZIP):
+********************************************************************************
+ARCHIVE DIR:  C:/wamp64/www/stage/wordpress
+ARCHIVE FILE: 20220710_softlor_39b5f9b427fb6a3f8398_20220710095924_archive.zip
+FILTERS: *OFF*
+DIRS:
+	not set
+FILES:
+	not set
+EXTS:  not set
+----------------------------------------
+COMPRESSING
+SIZE:	137.75MB
+STATS:	Dirs 982 | Files 11,065
+SQL ADDED: 20220710_softlor_39b5f9b427fb6a3f8398_20220710095924_database.sql
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 12047
+    [filename] => C:\wamp64\www\stage\wordpress\wp-content\backups-dup-lite\tmp\20220710_softlor_39b5f9b427fb6a3f8398_20220710095924_archive.zip
+    [comment] => 
+)
+
+FILE ADDED TO ZIP: 12046
+COMPRESSION RESULT: '1'
+COMPRESSED SIZE: 75.36MB
+ARCHIVE RUNTIME: 76.95 sec.
+MEMORY STACK: 6MB
+building installer
+add_extra_files1
+add_extra_files2
+add_extra_files3
+add_extra_files4
+Doing archive file check
+add_extra_files5
+add_extra_files6
+add_extra_files8
+Successfully opened zip C:/wamp64/www/stage/wordpress/wp-content/backups-dup-lite/tmp/20220710_softlor_39b5f9b427fb6a3f8398_20220710095924_archive.zip
+Adding enhanced installer files to archive using ZipArchive
+Installer files added to archive
+Added to archive
+After ziparchive close when adding installer
+
+********************************************************************************
+INTEGRITY CHECKS:
+********************************************************************************
+SQL FILE: 989.79KB
+INSTALLER FILE: 64.59KB
+ARCHIVE FILE: 76.53MB 
+EXPECTED FILE/DIRECTORY COUNT: 12,047
+ACTUAL FILE/DIRECTORY COUNT: 12,046
+ARCHIVE CONSISTENCY TEST: Pass
+
+********************************************************************************
+RECORD ID:[1]
+TOTAL PROCESS RUNTIME: 79.55 sec.
+PEAK PHP MEMORY USED: 8MB
+DONE PROCESSING => 20220710_softlor 10 July 2022 10h00
+
