@@ -40,7 +40,7 @@ function custom_siteCategory()
         $string .= '<div id="site">';
         while ($the_query->have_posts()) {
             $the_query->the_post();
-            $string .= '<div class="site">' . get_the_content()  .'</div>';
+            $string .= '<div class="site ps-5">' . get_the_content()  .'</div>';
         }
         $string .= '</div">';
     }   

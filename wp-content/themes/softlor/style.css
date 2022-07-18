@@ -73,7 +73,6 @@ nav a:hover {
 
 nav a.nav-link:hover {
   color: white;
-
   animation: tada;
   animation-duration: 2s;
   text-decoration: underline;
@@ -182,7 +181,7 @@ section img {
 
 #contact1 {
   color: aliceblue;
-  text-shadow: 0 4px 8px rgb(243, 240, 240)
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 #contact2 {
@@ -192,7 +191,7 @@ section img {
 
 #contact3 {
   color: aliceblue;
-  text-shadow: 0 4px 8px rgb(243, 240, 240);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 /*animation de la photo*/
@@ -228,13 +227,17 @@ PAGE AVEC BANNIERE
   padding: 10px 3%;
 }
 
+/* -------------------------------------------
+PAGE SITE INTERNET
+------------------------------------------- */
+
 .wp-block-group__inner-container {
   margin: 50px;
 }
 
 #site {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .site:nth-child(2n+1) {

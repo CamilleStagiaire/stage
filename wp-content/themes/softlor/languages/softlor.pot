@@ -1,0 +1,89 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Softlor\n"
+"POT-Creation-Date: 2022-07-18 11:45+0200\n"
+"PO-Revision-Date: 2022-07-15 15:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_n;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions.php:57
+msgid "Icones"
+msgstr ""
+
+#: functions.php:83
+msgid "Caroussel d'images Accueil"
+msgstr ""
+
+#: functions.php:85 functions.php:86
+msgid "Ajouter une image"
+msgstr ""
+
+#: functions.php:89
+msgid "Voir la liste"
+msgstr ""
+
+#: functions.php:91
+msgid "Rechercher une image"
+msgstr ""
+
+#: functions.php:94
+msgid "Carrousel"
+msgstr ""
+
+#: functions.php:123 functions.php:159
+msgid "Ordre"
+msgstr ""
+
+#: functions.php:124 functions.php:160
+msgid "Image affichée"
+msgstr ""
+
+#: options/agence.php:20
+msgid "Paramètres"
+msgstr ""
+
+#: options/agence.php:21
+msgid "Vous pouvez gérer les paramètres"
+msgstr ""
+
+#: options/agence.php:23
+msgid "Horaires d'ouverture"
+msgstr ""
+
+#: options/agence.php:28
+msgid "Adresse"
+msgstr ""
+
+#: options/agence.php:33
+msgid "Téléphones"
+msgstr ""
+
+#: options/agence.php:42
+msgid "Agence"
+msgstr ""
+
+#: options/agence.php:48
+msgid "Gestion de l'agence"
+msgstr ""
+
+#: options/apparence.php:6 options/apparence.php:16
+msgid "Couleur entête et pied de page"
+msgstr ""
+
+#: options/apparence.php:23
+msgid "Personnalisation du fond"
+msgstr ""
+
+#: options/apparence.php:33
+msgid "Couleur de fond"
+msgstr ""

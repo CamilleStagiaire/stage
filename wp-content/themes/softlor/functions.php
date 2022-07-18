@@ -54,7 +54,7 @@ function softlor_menu_link_class(array $attrs): array
 function softlor_init()
 {
     register_post_type('icone', [
-        'label' => 'Icones',
+        'label' => __('Icones','softlor'),
         'public' => true,
         'menu_position' => 4,
         'menu_icon' => 'dashicons-menu',
@@ -80,18 +80,18 @@ AgenceMenuPage::register();
 function carrousel_init()
 {
     $labels = array(
-        'name' => 'Caroussel d\'images Accueil',
+        'name' => __('Caroussel d\'images Accueil', 'softlor'),
         'singular_name' => 'Image accueil',
-        'add_new' => 'Ajouter une image',
-        'add_new_item' => 'Ajouter une image',
+        'add_new' => __('Ajouter une image', 'softlor'),
+        'add_new_item' => __('Ajouter une image','softlor'),
         'edit_item' => 'Ajouter une image',
         'new_item' => 'Nouveau',
-        'all_items' => 'Voir la liste',
+        'all_items' => __('Voir la liste','softlor'),
         'view_item' => 'Voir l\'élément',
-        'search_items' => 'Rechercher une image',
+        'search_items' =>__('Rechercher une image', 'softlor'),
         'not_found' =>  'Aucun élément trouvé',
-        'not_found_in_trash' => 'Aucun élémént dans la corbeille',
-        'menu_name' => 'Carrousel',
+        'not_found_in_trash' => 'Aucun élément dans la corbeille',
+        'menu_name' => __('Carrousel','softlor'),
     );
 
     $args = array(
@@ -120,8 +120,8 @@ add_filter('manage_edit-carrousel_columns', 'carrousel_col_change'); // change n
 
 function carrousel_col_change($columns)
 {
-    $columns['carrousel_image_order'] = "Ordre";
-    $columns['carrousel_image'] = "Image affichée";
+    $columns['carrousel_image_order'] = __("Ordre",'softlor');
+    $columns['carrousel_image'] = __("Image affichée",'softlor');
 
     return $columns;
 }
@@ -140,7 +140,7 @@ function carrousel_show($column, $post_id)
 }
 
 // tri auto de l'ordre dans la colonne admin carrousel
-function carrousel_change_slides_order($query)
+function carrousel_change_slides_order(WP_Query $query)
 {
 
     global $post_type, $pagenow;
@@ -156,8 +156,8 @@ add_filter('manage_edit-icone_columns', 'icone_col_change'); // change nom colon
 
 function icone_col_change($columns)
 {
-    $columns['icone_image_order'] = "Ordre";
-    $columns['icone_image'] = "Image affichée";
+    $columns['icone_image_order'] = __("Ordre",'softlor');
+    $columns['icone_image'] = __("Image affichée",'softlor');
 
     return $columns;
 }
@@ -176,7 +176,7 @@ function icone_show($column, $post_id)
 }
 
 // tri auto de l'ordre dans la colonne admin icones
-function icone_change_slides_order($query)
+function icone_change_slides_order(WP_Query $query)
 {
     global $post_type, $pagenow;
     if ($pagenow == 'edit.php' && $post_type == 'icone') {
@@ -184,4 +184,10 @@ function icone_change_slides_order($query)
         $query->query_vars['order'] = 'asc';
     }
 }
-add_action('pre_get_posts', 'carrousel_change_slides_order');
+add_action('pre_get_posts', 'icone_change_slides_order');
+
+//https://developer.wordpress.org/apis/handbook/internationalization/
+add_action('after_setup_theme', function (){
+    load_theme_textdomain('softlor',get_template_directory() . '/languages');
+});
+

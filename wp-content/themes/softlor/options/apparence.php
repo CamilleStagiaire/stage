@@ -3,7 +3,7 @@
 add_action('customize_register', function(WP_Customize_Manager $manager) {
 
     $manager->add_section('softlor_apparence', [
-        'title' => 'Couleur entête et pied de pagee'
+        'title' => __('Couleur entête et pied de page', 'softlor')
     ]);
 
     $manager->add_setting('header_background', [
@@ -13,14 +13,14 @@ add_action('customize_register', function(WP_Customize_Manager $manager) {
     ]);
     $manager->add_control(new WP_Customize_Color_Control($manager, 'header_background', [
         'section' => 'softlor_apparence',
-        'label' => 'Couleur entête et pied de page'
+        'label' => __('Couleur entête et pied de page', 'softlor')
     ]));
 });
 
 add_action('customize_register', function(WP_Customize_Manager $manager) {
 
     $manager->add_section('softlor_background', [
-        'title' => 'Personnalisation du fond'
+        'title' => __('Personnalisation du fond', 'softlor')
     ]);
 
     $manager->add_setting('body_background', [
@@ -30,7 +30,7 @@ add_action('customize_register', function(WP_Customize_Manager $manager) {
     ]);
     $manager->add_control(new WP_Customize_Color_Control($manager, 'body_background', [
         'section' => 'softlor_background',
-        'label' => 'Couleur de fond'
+        'label' => __('Couleur de fond', 'softlor')
     ]));
 });
 add_action('customize_preview_init', function() {
