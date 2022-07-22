@@ -3,7 +3,8 @@
  
 <?php
  $args = [
-  'tag' => 'contact',
+  'post_type' => 'page',
+  'pagename' => 'contact',
 ];
 // The Query
 $the_query = new WP_Query( $args );
@@ -12,7 +13,7 @@ $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
     while ( $the_query->have_posts() ) {
         $the_query->the_post();
-        echo '<h1 class="text-center mb-5">' . get_the_title() . '</h1>'; // <h1 class="text-center mb-5">Découvrir nos services</h1>
+        echo '<h1 class="text-center mb-5">' . get_the_title() . '</h1>';
     } 
 } 
 wp_reset_postdata();?>
@@ -42,7 +43,16 @@ wp_reset_postdata();?>
 
 <!-- Formulaire de contact -->
 <div class="pb-5" id="form" style="background-color: <?= get_theme_mod('body_background'); ?>!important">
-  <h4 class="text-center my-5 pt-5">Envoyer un message</h4>
+<?php
+
+if ( $the_query->have_posts() ) {
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        echo '<h4 class="text-center my-5 pt-5">' . get_field('affichage') . '</h4>';
+    } 
+} 
+wp_reset_postdata();?>
+
   <div class="divider"></div>
   <form>
     <div class="row mt-5 text-center">

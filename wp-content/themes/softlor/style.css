@@ -214,7 +214,6 @@ section img {
   animation-duration: 2s;
 }
 
-
 /* -------------------------------------------
 PAGE AVEC BANNIERE
 ------------------------------------------- */
@@ -227,13 +226,13 @@ PAGE AVEC BANNIERE
   padding: 10px 3%;
 }
 
+.wp-block-group__inner-container {
+  margin: 100px;
+}
+
 /* -------------------------------------------
 PAGE SITE INTERNET
 ------------------------------------------- */
-
-.wp-block-group__inner-container {
-  margin: 50px;
-}
 
 #site {
   margin-left: 10%;
@@ -245,9 +244,28 @@ PAGE SITE INTERNET
   animation-duration: 2s;
 }
 
-
 .site:nth-child(2n) {
   animation: bounceInRight;
   animation-duration: 2s;
   background-color: white;
+}
+
+/* -------------------------------------------
+PAGE REFERENCEMENT
+------------------------------------------- */
+
+#referencement ul {
+ list-style-image:  url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
+}
+#referencement  li {
+margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: justify;
+  animation: bounceInRight;
+  animation-duration: 2s;
+ }
+
+ #seo {
+  animation: bounceInLeft;
+  animation-duration: 2s;
 }

@@ -5,21 +5,22 @@ get_header(); ?>
 
 <!-- Bloc d'icones -->
 <article class="mt-5 py-5" id="icone">
-<?php
- $args = [
-  'tag' => 'services',
-];
-// The Query
-$the_query = new WP_Query( $args );
- 
-// The Loop
-if ( $the_query->have_posts() ) {
-    while ( $the_query->have_posts() ) {
-        $the_query->the_post();
-        echo '<h1 class="text-center mb-5">' . get_the_title() . '</h1>'; // <h1 class="text-center mb-5">Découvrir nos services</h1>
-    } 
-} 
-wp_reset_postdata();?>
+  <?php
+  $args = [
+    'post_type' => 'page',
+    'pagename' => 'softlor',
+  ];
+  // The Query
+  $the_query = new WP_Query($args);
+
+  // The Loop
+  if ($the_query->have_posts()) {
+    while ($the_query->have_posts()) {
+      $the_query->the_post();
+      echo '<h1 class="text-center mb-5">' . get_field('affichage') . '</h1>';
+    }
+  }
+  wp_reset_postdata(); ?>
 
   <div class="divider"></div>
   <?php get_template_part('archive', 'icone'); ?>
@@ -47,8 +48,8 @@ wp_reset_postdata();?>
           <div class="ms-3 my-5">
             <?php the_content(); ?>
           </div>
-        <?php endwhile ?>
-      <?php endif ?>
+    <?php endwhile ?>
+  <?php endif ?>
         </div>
 
       </div>

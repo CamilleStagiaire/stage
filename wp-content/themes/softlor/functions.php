@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or die('rien à voir');
+
 require_once('options/apparence.php');
 
 function softlor_supports()
@@ -142,7 +144,6 @@ function carrousel_show($column, $post_id)
 // tri auto de l'ordre dans la colonne admin carrousel
 function carrousel_change_slides_order(WP_Query $query)
 {
-
     global $post_type, $pagenow;
     if ($pagenow == 'edit.php' && $post_type == 'carrousel') {
         $query->query_vars['orderby'] = 'menu_order';
@@ -191,3 +192,4 @@ add_action('after_setup_theme', function (){
     load_theme_textdomain('softlor',get_template_directory() . '/languages');
 });
 
+//Api: https://developer.wordpress.org/rest-api
