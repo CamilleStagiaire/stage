@@ -40,18 +40,15 @@ get_header(); ?>
       <h2 class="text-center mx-5"><?php the_title(); ?></h2>
       <h4 class="text-center mx-5"> <?php the_excerpt(); ?></h4>
       <div class="divider my-5"></div>
-      <div class="row">
-        <div id="logo" class="col-md-2 offset-1 text-center pt-5">
+      <div class="row m-5">
+        <div id="logo" class="col-lg-2 text-center">
           <?php the_post_thumbnail() ?>
         </div>
-        <div class="col-md-8">
-          <div class="ms-3 my-5">
-            <?php the_content(); ?>
-          </div>
-    <?php endwhile ?>
-  <?php endif ?>
+        <div class="col-lg-9">
+          <?php the_content(); ?>
+        <?php endwhile ?>
+      <?php endif ?>
         </div>
-
       </div>
 </article>
 

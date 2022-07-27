@@ -41,7 +41,6 @@
 
 }
 
-
 body {
   font-family: 'robotoregular', Helvetica, Arial, serif;
 }
@@ -57,16 +56,8 @@ nav {
   font-family: 'oxygenregular', Helvetica, Arial, serif
 }
 
-nav a {
-  color: white;
-}
-
-nav a.nav-link {
-  color: white;
-}
-
 nav a:hover {
-  color: white;
+  /* color: white; */
   animation: tada;
   animation-duration: 2s;
 }
@@ -233,10 +224,17 @@ PAGE AVEC BANNIERE
 /* -------------------------------------------
 PAGE SITE INTERNET
 ------------------------------------------- */
-
 #site {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 50px;
+}
+
+#site h2 {
+  margin-top: 30px;
+}
+
+#site img {
+  animation: bounceInRight;
+  animation-duration: 2s;
 }
 
 .site:nth-child(2n+1) {
@@ -255,17 +253,172 @@ PAGE REFERENCEMENT
 ------------------------------------------- */
 
 #referencement ul {
- list-style-image:  url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
+  list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
 }
-#referencement  li {
-margin-top: 20px;
+
+#referencement li {
+  margin-top: 20px;
   margin-bottom: 30px;
   text-align: justify;
   animation: bounceInRight;
   animation-duration: 2s;
- }
+}
 
- #seo {
+#seo {
   animation: bounceInLeft;
   animation-duration: 2s;
+}
+
+/* -------------------------------------------
+PAGE INFOGERANCE
+------------------------------------------- */
+
+#info ul {
+  list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
+}
+
+#info li {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: justify;
+  animation: bounceInLeft;
+  animation-duration: 2s;
+}
+
+#infogerance img {
+  animation: bounceInRight;
+  animation-duration: 2s;
+}
+
+/* -------------------------------------------
+MEDIA QUERIES
+------------------------------------------- */
+
+@media screen and (min-width: 810px) and (max-width: 1300px) {
+  #navbarNav {
+    margin-right: 20px;
+  }
+
+  /* page d'accueil */
+  #contacts {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  /* page site */
+  .wp-block-group__inner-container {
+    margin: 20px;
+  }
+
+  .wp-block-group__inner-container img {
+    height: 70%;
+    width: 70%;
+  }
+
+  /* page référencement */
+  #seo img {
+    height: 400px;
+    width: 400px;
+  }
+
+  /* page infogérance*/
+  #info {
+    margin: 20px;
+  }
+
+  #infogerance img {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 810px) {
+
+  /* page d'accueil */
+  #propos {
+    padding: 10px;
+  }
+
+  #contacts {
+    font-size: 1.7em;
+    font-weight: bold;
+  }
+
+  /* page référencement */
+  #seo img {
+    margin-left: 50px;
+    height: 350px;
+    width: 350px;
+  }
+
+  /* page site */
+  .wp-block-group__inner-container {
+    margin: 20px;
+  }
+
+  .wp-block-group__inner-container img {
+    height: 80%;
+    width: 80%;
+  }
+
+  /* page infogérance*/
+  #info {
+    margin: 20px;
+  }
+
+  #infogerance img {
+
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  /* page d'accueil */
+  #propos {
+    padding: 10px;
+  }
+
+  #contacts {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  /* bannière */
+  #banniere h3 {
+    margin: 10px;
+  }
+
+  /* page site */
+  .wp-block-group__inner-container {
+    margin: 0px;
+  }
+
+  .wp-block-group__inner-container p {
+    margin: 10px;
+  }
+
+  .wp-block-group__inner-container img {
+    height: 80%;
+    width: 80%;
+  }
+
+  /* page référencement */
+  #seo img {
+    margin-left: 10px;
+    height: 250px;
+    width: 250px;
+  }
+
+  /* page infogérance */
+  #infogerance img {
+
+    height: 250px;
+    width: 250px;
+  }
+
+  #info {
+    margin: 10px;
+  }
 }

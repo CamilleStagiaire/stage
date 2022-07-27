@@ -48,7 +48,7 @@ function softlor_menu_class(array $classes): array
 
 function softlor_menu_link_class(array $attrs): array
 {
-    $attrs['class'] = 'nav-link px-5';
+    $attrs['class'] = 'nav-link active px-5';
     return $attrs;
 }
 
@@ -191,5 +191,8 @@ add_action('pre_get_posts', 'icone_change_slides_order');
 add_action('after_setup_theme', function (){
     load_theme_textdomain('softlor',get_template_directory() . '/languages');
 });
+
+//ACF - Ré-active l'affichage des Champs Personnalisés natifs de WordPress
+//add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
 //Api: https://developer.wordpress.org/rest-api

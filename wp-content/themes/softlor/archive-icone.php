@@ -20,7 +20,7 @@ query_posts(array(
 			<p><?php the_content(); ?></p>
 			<h4 class="text-center"><?php the_title(); ?></h4>
 			<div class="text">
-				<p class="text-center"><?php echo get_the_excerpt(); ?></p>
+				<p class="text-center"><?= the_excerpt(); ?></p>
 			</div>
 		</div>
 	<?php endwhile; ?>

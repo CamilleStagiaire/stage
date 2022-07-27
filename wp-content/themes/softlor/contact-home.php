@@ -1,4 +1,3 @@
-<!-- Bloc de contact -->
 <div id="contact" class="mt-5">
  
 <?php
