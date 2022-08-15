@@ -64,9 +64,13 @@ nav a:hover {
 
 nav a.nav-link:hover {
   color: white;
-  animation: tada;
+  animation: swing;
   animation-duration: 2s;
   text-decoration: underline;
+}
+
+nav a.nav-link{
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif;
 }
 
 /* divider*/
@@ -109,6 +113,16 @@ section p {
   background-color: rgba(0, 0, 0, 0.30);
   padding: 10px 3%;
 }
+section p a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif;
+}
+
+section p a:hover {
+  color: black;
+}
 
 section img {
   opacity: 0.5;
@@ -140,6 +154,8 @@ section img {
   line-height: 50px;
 }
 
+
+/* bloc à propos */
 #logo img {
   height: 200px;
   width: 200px;
@@ -162,7 +178,7 @@ section img {
 }
 
 #contact {
-  font-family: 'oxygenregular', Helvetica, Arial, serif
+  font-family: 'oswald_regularregular', Helvetica, Arial, serif
 }
 
 #contacts {
@@ -219,6 +235,12 @@ PAGE AVEC BANNIERE
 
 .wp-block-group__inner-container {
   margin: 100px;
+}
+
+/* animation des videos */
+iframe:hover  {
+  animation: pulse;
+  animation-duration: 2s;
 }
 
 /* -------------------------------------------
@@ -422,3 +444,10 @@ MEDIA QUERIES
     margin: 10px;
   }
 }
+
+
+/* 
+#propos img:hover {
+  animation: pulse;
+  animation-duration: 2s;
+} */

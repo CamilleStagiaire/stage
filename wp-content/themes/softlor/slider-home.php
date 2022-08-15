@@ -42,7 +42,8 @@ if ($slider_query->have_posts()) : ?>
                         <img src="<?= $thumbnail_src ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-md-block">
                             <h1 class="animate"><?php the_title(); ?></h1>
-                            <h3 class="animate"><?php the_excerpt(); ?></h3>
+                            <h3 class="animate"><?php the_content(); ?></h3>
+                          
                         </div>
                     </div>
 

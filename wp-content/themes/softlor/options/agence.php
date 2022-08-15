@@ -1,16 +1,18 @@
 <?php
 
-// Gestion des horaires / adresse / téléphones dans le meunu réglage Agence
+// Gestion des horaires / adresse / téléphones dans le menu réglage Agence
 class AgenceMenuPage
 {
     const GROUP = 'agence_options';
 
+    // enregistrer un menu
     public static function register()
     {
         add_action('admin_menu', [self::class, 'addMenu']);
         add_action('admin_init', [self::class, 'registerSettings']);
     }
 
+  // formulaire API setting
     public static function registerSettings()
     {
         register_setting(self::GROUP, 'agence_horaire');
@@ -37,11 +39,13 @@ class AgenceMenuPage
             }, self::GROUP, 'agence_options_section');
     }
 
+      // créer une entrée
     public static function addMenu()
     {
         add_options_page( "Gestion de l'agence", __("Agence", 'softlor'), "manage_options", self::GROUP, [self::class, 'render']);
     }
 
+    //affiche le contenu
     public static function render()
     {
         ?>

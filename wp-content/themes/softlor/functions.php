@@ -56,7 +56,7 @@ function softlor_menu_link_class(array $attrs): array
 function softlor_init()
 {
     register_post_type('icone', [
-        'label' => __('Icones','softlor'),
+        'label' => __('Icones', 'softlor'),
         'public' => true,
         'menu_position' => 4,
         'menu_icon' => 'dashicons-menu',
@@ -85,15 +85,15 @@ function carrousel_init()
         'name' => __('Caroussel d\'images Accueil', 'softlor'),
         'singular_name' => 'Image accueil',
         'add_new' => __('Ajouter une image', 'softlor'),
-        'add_new_item' => __('Ajouter une image','softlor'),
+        'add_new_item' => __('Ajouter une image', 'softlor'),
         'edit_item' => 'Ajouter une image',
         'new_item' => 'Nouveau',
-        'all_items' => __('Voir la liste','softlor'),
+        'all_items' => __('Voir la liste', 'softlor'),
         'view_item' => 'Voir l\'élément',
-        'search_items' =>__('Rechercher une image', 'softlor'),
+        'search_items' => __('Rechercher une image', 'softlor'),
         'not_found' =>  'Aucun élément trouvé',
         'not_found_in_trash' => 'Aucun élément dans la corbeille',
-        'menu_name' => __('Carrousel','softlor'),
+        'menu_name' => __('Carrousel', 'softlor'),
     );
 
     $args = array(
@@ -101,7 +101,7 @@ function carrousel_init()
         'public' => true,
         'publicly_queryable' => false,
         'show_ui' => true,
-        'show_in_menu' => true,
+        'show_in_rest' => true,
         'show_in_rest' => true,
         'query_var' => true,
         'rewrite' => true,
@@ -111,7 +111,7 @@ function carrousel_init()
         'menu_position' => 3,
         'menu_icon' => 'dashicons-embed-photo',
         'exclude_from_search' => true,
-        'supports' => array('title', 'page-attributes', 'thumbnail', 'excerpt'),
+        'supports' => ['title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'],
     );
     register_post_type('carrousel', $args);
 }
@@ -122,8 +122,8 @@ add_filter('manage_edit-carrousel_columns', 'carrousel_col_change'); // change n
 
 function carrousel_col_change($columns)
 {
-    $columns['carrousel_image_order'] = __("Ordre",'softlor');
-    $columns['carrousel_image'] = __("Image affichée",'softlor');
+    $columns['carrousel_image_order'] = __("Ordre", 'softlor');
+    $columns['carrousel_image'] = __("Image affichée", 'softlor');
 
     return $columns;
 }
@@ -157,8 +157,8 @@ add_filter('manage_edit-icone_columns', 'icone_col_change'); // change nom colon
 
 function icone_col_change($columns)
 {
-    $columns['icone_image_order'] = __("Ordre",'softlor');
-    $columns['icone_image'] = __("Image affichée",'softlor');
+    $columns['icone_image_order'] = __("Ordre", 'softlor');
+    $columns['icone_image'] = __("Image affichée", 'softlor');
 
     return $columns;
 }
@@ -188,11 +188,76 @@ function icone_change_slides_order(WP_Query $query)
 add_action('pre_get_posts', 'icone_change_slides_order');
 
 //https://developer.wordpress.org/apis/handbook/internationalization/
-add_action('after_setup_theme', function (){
-    load_theme_textdomain('softlor',get_template_directory() . '/languages');
+add_action('after_setup_theme', function () {
+    load_theme_textdomain('softlor', get_template_directory() . '/languages');
 });
 
 //ACF - Ré-active l'affichage des Champs Personnalisés natifs de WordPress
 //add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
 //Api: https://developer.wordpress.org/rest-api
+
+/* Activer le support des catégories pour les pages */
+function softlor_cat_pages()
+{
+    register_taxonomy_for_object_type('category', 'page');
+}
+add_action('init', 'softlor_cat_pages');
+
+// Ajout de meta-description
+function softlorwp_meta_tags_meta_boxes()
+{
+    add_meta_box('softlorwp_meta_tags_meta_boxes', 'Référencement naturel', 'softlorwp_meta_tags_meta_boxes_callback', ['post', 'page']);
+}
+add_action('add_meta_boxes', 'softlorwp_meta_tags_meta_boxes');
+
+//fonction pour afficher la meta_box dans les pages et posts
+function softlorwp_meta_tags_meta_boxes_callback($post)
+{
+    $softlorwp_meta_tag_description = get_post_meta($post->ID, 'softlorwp_meta_tag_description', true);
+?>
+    <table class="form-table">
+        <tbody>
+            <tr>
+                <th><label for="softlorwp-meta-tag-description">Description</label></th>
+                <td><textarea id="softlorwp-meta-tag-description" class="large-text" rows="3" type="text" name="softlorwp_meta_tag_description" maxlength="160" placeholder="Entrez votre description"><?php echo $softlorwp_meta_tag_description; ?></textarea></td>
+            </tr>
+    </table>
+<?php
+}
+
+//fonction pour sauvegarder en base de données
+function softlorwp_meta_tags_save_postdata($post_id)
+{
+    if (isset($_POST['softlorwp_meta_tag_description'])) {
+        update_post_meta($post_id, 'softlorwp_meta_tag_description', $_POST['softlorwp_meta_tag_description']);
+    }
+}
+add_action('save_post', 'softlorwp_meta_tags_save_postdata');
+
+//fonction pour afficher la meta description dans WordPress
+function softlorwp_meta_description_action()
+{
+    if (is_singular()) {
+        $post = get_queried_object();
+        $post_meta_description = get_post_meta($post->ID, 'softlorwp_meta_tag_description', true);
+        echo '<meta name="description" content="' . $post_meta_description . '">';
+    }
+}
+add_action('wp_head', 'softlorwp_meta_description_action', 1);
+
+// widgets de la sidebar
+function softlor_register_widget()
+{
+    //register_widget(YoutubeWidget::class);
+    register_sidebar([
+        'id' => 'pages',
+        'name' => 'Sidebar page bannière',
+        'before_widget' => '<div class="p-4 %2$s" id=="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="fst-italic">',
+        'after_title' => '</h4>',
+    ]);
+}
+
+add_action('widgets_init', 'softlor_register_widget');

@@ -12,4 +12,8 @@
     <h1>Pas d'articles</h1>
 <//?php endif; ?>
 
+Begin Comment
+<//?php comments_template(); ?>
+End Comment
+
 <//?php get_footer() ?> -->

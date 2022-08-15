@@ -17,10 +17,9 @@ query_posts(array(
 <div class="row justify-content-around">
 	<?php while (have_posts()) : the_post(); ?>
 		<div class="col-md-3 p-5 ">
-			<p><?php the_content(); ?></p>
 			<h4 class="text-center"><?php the_title(); ?></h4>
-			<div class="text">
-				<p class="text-center"><?= the_excerpt(); ?></p>
+			<div class="text-center">
+				<p><?= the_content(); ?></p>
 			</div>
 		</div>
 	<?php endwhile; ?>
