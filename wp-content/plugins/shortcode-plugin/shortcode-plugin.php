@@ -8,31 +8,24 @@
 
 defined('ABSPATH') or die('rien à voir');
 
-// function custom_boutiqueCategory()
-// {
-//     // the query
-//     $the_query = new WP_Query(array('category_name' => 'boutique', 'order' => 'ASC'));
-//     // La boucle WordPress
-//     $string = '';
-//     if ($the_query->have_posts()) {
-//         $string .= '<ul class="postsbycategory widget_recent_entries">';
-//         while ($the_query->have_posts()) {
-//             $the_query->the_post();
-//             if (has_post_thumbnail()) {
-//                 $string .= '<li>';
-//             } else {
-//                 // Si aucune image n’existe
-//                 $string .= '<li><a href="' . get_the_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
-//             }
-//         }
-//     }
-//     $string .= '</ul>';
-//     return $string;
-//     /* Restauration des données */
-//     wp_reset_postdata();
-// }
+// acticle pour la page boutique
+function custom_boutiqueCategory($post_id)
+{
+    $the_query = new WP_Query(array('category_name' => 'boutique', 'order' => 'ASC'));
+    $string = '';
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            $string .= '<h1 class="text-center mb-5">' . get_the_title()  . '</h1>' .  '<div class="divider"></div>';
+            $string .= '<div id="boutique" class="ms-5 px-5 py-3">' . get_the_content() . '</div>';
+        }
+        $string .= '</div>';
+    }
+    return $string;
+    wp_reset_postdata();
+}
 
-// acticles pour la page infogérance
+// acticle pour la page infogérance
 function custom_infogeranceCategory($post_id)
 {
     $the_query = new WP_Query(array('category_name' => 'infogerance', 'order' => 'ASC'));
@@ -50,7 +43,7 @@ function custom_infogeranceCategory($post_id)
     wp_reset_postdata();
 }
 
-// acticles pour la page référencement
+// acticle pour la page référencement
 function custom_referencementCategory($post_id)
 {
     $the_query = new WP_Query(array('category_name' => 'referencement', 'order' => 'ASC'));

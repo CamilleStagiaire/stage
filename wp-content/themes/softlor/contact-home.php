@@ -56,5 +56,6 @@ wp_reset_postdata();?>
   <form>
     <div class="row mt-5 text-center">
       <?= do_shortcode('[ninja_form id=1]') ?>
+     
   </form>
 </div>

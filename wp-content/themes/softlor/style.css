@@ -52,13 +52,12 @@ h1 {
 /* barre de navigation */
 
 nav {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-family: 'oxygenregular', Helvetica, Arial, serif
 }
 
 nav a:hover {
-  /* color: white; */
-  animation: tada;
+  animation: swing;
   animation-duration: 2s;
 }
 
@@ -166,6 +165,11 @@ section img {
   animation-duration: 3s;
 }
 
+#propos img:hover {
+  animation: pulse;
+  animation-duration: 2s;
+}
+
 /* image nous contacter */
 .fixed-bg {
   background-image: url("http://localhost/stage/wordpress/wp-content/themes/softlor/images/finger.jpg");
@@ -243,6 +247,11 @@ iframe:hover  {
   animation-duration: 2s;
 }
 
+/* les icones des pages */
+#referencement ul, #boutique ul, #info ul {
+  list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
+}
+
 /* -------------------------------------------
 PAGE SITE INTERNET
 ------------------------------------------- */
@@ -271,13 +280,31 @@ PAGE SITE INTERNET
 }
 
 /* -------------------------------------------
-PAGE REFERENCEMENT
+PAGE BOUTIQUE
 ------------------------------------------- */
-
-#referencement ul {
-  list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
+#boutique {
+margin-left: 100px;
 }
 
+#boutique li {
+  padding-right: 30px;
+  text-align: justify;
+  animation: bounceInDown;
+  animation-duration: 2s;
+}
+
+#boutique img {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+#boutique img:hover {
+  animation: heartBeat;
+  animation-duration: 2s;
+}
+
+/* -------------------------------------------
+PAGE REFERENCEMENT
+------------------------------------------- */
 #referencement li {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -294,11 +321,6 @@ PAGE REFERENCEMENT
 /* -------------------------------------------
 PAGE INFOGERANCE
 ------------------------------------------- */
-
-#info ul {
-  list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
-}
-
 #info li {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -335,6 +357,11 @@ MEDIA QUERIES
   .wp-block-group__inner-container img {
     height: 70%;
     width: 70%;
+  }
+
+   /* page boutique*/
+   #boutique img {
+    margin-left: 15%;
   }
 
   /* page référencement */
@@ -383,6 +410,11 @@ MEDIA QUERIES
     width: 80%;
   }
 
+  /* page boutique*/
+  #boutique img {
+    margin-left: 20%;
+  }
+  
   /* page infogérance*/
   #info {
     margin: 20px;
@@ -426,6 +458,11 @@ MEDIA QUERIES
     width: 80%;
   }
 
+  /* page boutique*/
+  #boutique img {
+    margin-left: 0px;
+  }
+
   /* page référencement */
   #seo img {
     margin-left: 10px;
@@ -444,10 +481,3 @@ MEDIA QUERIES
     margin: 10px;
   }
 }
-
-
-/* 
-#propos img:hover {
-  animation: pulse;
-  animation-duration: 2s;
-} */
