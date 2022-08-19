@@ -31,4 +31,4 @@
     </div>
   </nav>
 
-  <main class="container-fluid" style="padding-right: 0px; padding-left: 0px ">
+  <main class="container-fluid" style="padding-right: 0px; padding-left: 0px">

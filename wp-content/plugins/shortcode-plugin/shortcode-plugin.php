@@ -9,15 +9,15 @@
 defined('ABSPATH') or die('rien à voir');
 
 // acticle pour la page boutique
-function custom_boutiqueCategory($post_id)
+function custom_boutiqueCategory()
 {
     $the_query = new WP_Query(array('category_name' => 'boutique', 'order' => 'ASC'));
-    $string = '';
+    $string = '<div>';
     if ($the_query->have_posts()) {
         while ($the_query->have_posts()) {
             $the_query->the_post();
             $string .= '<h1 class="text-center mb-5">' . get_the_title()  . '</h1>' .  '<div class="divider"></div>';
-            $string .= '<div id="boutique" class="ms-5 px-5 py-3">' . get_the_content() . '</div>';
+            $string .= '<div id="boutique" class="mx-5 px-5 py-3">' . get_the_content() . '</div>';
         }
         $string .= '</div>';
     }
@@ -29,13 +29,13 @@ function custom_boutiqueCategory($post_id)
 function custom_infogeranceCategory($post_id)
 {
     $the_query = new WP_Query(array('category_name' => 'infogerance', 'order' => 'ASC'));
-    $string = '';
+    $string = '<div>';
     if ($the_query->have_posts()) {
         while ($the_query->have_posts()) {
             $the_query->the_post();
             $string .= '<h1 class="text-center mb-5">' . get_the_title()  . '</h1>' .  '<div class="divider"></div>';
-            $string .= '<div id="infogerance" class="row align-items-center"><div id="info" class="col-lg-5 offset-1 pe-5">' . get_the_content() . '</div>';
-            $string .= '<div class="col-lg-4 offset-1">' . get_the_post_thumbnail($post_id, [500, 500]) . '</div></div>';
+            $string .= '<div class="row align-items-center"><div id="info" class="col-lg-5 offset-1 pe-5">' . get_the_content() . '</div>';
+            $string .= '<div id="infogerance" class="col-lg-4 offset-1">' . get_the_post_thumbnail($post_id, [500, 500]) . '</div></div>';
         }
         $string .= '</div>';
     }
@@ -47,7 +47,7 @@ function custom_infogeranceCategory($post_id)
 function custom_referencementCategory($post_id)
 {
     $the_query = new WP_Query(array('category_name' => 'referencement', 'order' => 'ASC'));
-    $string = '';
+    $string = '<div>';
     if ($the_query->have_posts()) {
         while ($the_query->have_posts()) {
             $the_query->the_post();

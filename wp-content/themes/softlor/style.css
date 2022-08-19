@@ -57,13 +57,13 @@ nav {
 }
 
 nav a:hover {
-  animation: swing;
+  animation: heartBeat;
   animation-duration: 2s;
 }
 
 nav a.nav-link:hover {
   color: white;
-  animation: swing;
+  animation: heartBeat;
   animation-duration: 2s;
   text-decoration: underline;
 }
@@ -229,7 +229,7 @@ section img {
 PAGE AVEC BANNIERE
 ------------------------------------------- */
 #banniere .banniere p {
-  animation: bounceInDown;
+  animation: fadeInDownBig;
   animation-duration: 2s;
   font-family: 'oswald_regularregular', Helvetica, Arial, serif;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
@@ -252,6 +252,23 @@ iframe:hover  {
   list-style-image: url("http://localhost/stage/wordpress/wp-content/uploads/2022/07/icons-coche.png");
 }
 
+.infogerance, .internet, .boutique, .ref {
+  margin-left: 4%;
+  margin-right: 4%;
+  text-align: justify;
+  line-height: 180%;
+  animation: fadeInUpBig;
+  animation-duration: 2s;
+}
+.ref a, .boutique a, .internet a {
+  color: black;
+}
+
+#infogerance:hover, #info:hover, #boutique:hover, #seo:hover, #referencement:hover, .site:nth-child(2n+1):hover, .site:nth-child(2n):hover{
+  animation: pulse;
+  animation-duration: 1s;
+}
+
 /* -------------------------------------------
 PAGE SITE INTERNET
 ------------------------------------------- */
@@ -263,18 +280,13 @@ PAGE SITE INTERNET
   margin-top: 30px;
 }
 
-#site img {
-  animation: bounceInRight;
-  animation-duration: 2s;
-}
-
 .site:nth-child(2n+1) {
-  animation: bounceInLeft;
+  animation: fadeInLeftBig;
   animation-duration: 2s;
 }
 
 .site:nth-child(2n) {
-  animation: bounceInRight;
+  animation: fadeInRightBig;
   animation-duration: 2s;
   background-color: white;
 }
@@ -289,7 +301,7 @@ margin-left: 100px;
 #boutique li {
   padding-right: 30px;
   text-align: justify;
-  animation: bounceInDown;
+  animation: fadeInLeftBig;
   animation-duration: 2s;
 }
 
@@ -297,6 +309,7 @@ margin-left: 100px;
   margin-top: 50px;
   margin-left: 100px;
 }
+
 #boutique img:hover {
   animation: heartBeat;
   animation-duration: 2s;
@@ -308,13 +321,16 @@ PAGE REFERENCEMENT
 #referencement li {
   margin-top: 20px;
   margin-bottom: 30px;
-  text-align: justify;
-  animation: bounceInRight;
-  animation-duration: 2s;
+  text-align: justify; 
 }
 
 #seo {
-  animation: bounceInLeft;
+  animation: fadeInLeftBig;
+  animation-duration: 2s;
+}
+
+#referencement {
+  animation: fadeInRightBig;
   animation-duration: 2s;
 }
 
@@ -325,12 +341,15 @@ PAGE INFOGERANCE
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: justify;
-  animation: bounceInLeft;
+}
+
+#info {
+  animation: fadeInLeftBig;
   animation-duration: 2s;
 }
 
-#infogerance img {
-  animation: bounceInRight;
+#infogerance{
+  animation: fadeInRightBig;
   animation-duration: 2s;
 }
 

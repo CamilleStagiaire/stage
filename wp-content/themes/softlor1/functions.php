@@ -182,4 +182,50 @@ add_action('after_switch_theme', function () {
    wp_insert_term('Volleyball', 'sport');
 });
 
+// Ajout de meta-description
+// function softlorwp_meta_tags_meta_boxes()
+// {
+//     add_meta_box('softlorwp_meta_tags_meta_boxes', 'Référencement naturel', 'softlorwp_meta_tags_meta_boxes_callback', ['post', 'page']);
+// }
+// add_action('add_meta_boxes', 'softlorwp_meta_tags_meta_boxes');
+
+// //fonction pour afficher la meta_box dans les pages et posts
+// function softlorwp_meta_tags_meta_boxes_callback($post)
+// {
+//     $softlorwp_meta_tag_description = get_post_meta($post->ID, 'softlorwp_meta_tag_description', true);
+// ?>
+<!-- //     <table class="form-table"> -->
+<!-- //         <tbody>
+//             <tr>
+//                 <th><label for="softlorwp-meta-tag-description">Description</label></th>
+//                 <td><textarea id="softlorwp-meta-tag-description" class="large-text" rows="3" type="text" name="softlorwp_meta_tag_description" maxlength="160" placeholder="Entrez votre description"><?php echo $softlorwp_meta_tag_description; ?></textarea></td>
+//             </tr>
+//     </table> -->
+// <?php
+// }
+
+// //fonction pour sauvegarder en base de données
+// function softlorwp_meta_tags_save_postdata($post_id)
+// {
+//     if (isset($_POST['softlorwp_meta_tag_description'])) {
+//         update_post_meta($post_id, 'softlorwp_meta_tag_description', $_POST['softlorwp_meta_tag_description']);
+//     }
+// }
+// add_action('save_post', 'softlorwp_meta_tags_save_postdata');
+
+// //fonction pour afficher la meta description dans WordPress
+// function softlorwp_meta_description_action()
+// {
+//     if (is_singular()) {
+//         $post = get_queried_object();
+//         $post_meta_description = get_post_meta($post->ID, 'softlorwp_meta_tag_description', true);
+//         echo '<meta name="description" content="' . $post_meta_description . '">';
+//     }
+// }
+// add_action('wp_head', 'softlorwp_meta_description_action', 1);
+
+//ACF - Ré-active l'affichage des Champs Personnalisés natifs de WordPress
+//add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+//Api: https://developer.wordpress.org/rest-api
 
