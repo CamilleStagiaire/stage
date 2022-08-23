@@ -356,8 +356,18 @@ PAGE INFOGERANCE
 /* -------------------------------------------
 MEDIA QUERIES
 ------------------------------------------- */
-
 @media screen and (min-width: 810px) and (max-width: 1300px) {
+/* bloc slider */
+section h1 {
+  font-size: 3em;
+ color:white;
+ margin-bottom: 30px;
+} 
+section p a {
+  font-size: 1.5em;
+ color: white;
+} 
+  
   #navbarNav {
     margin-right: 20px;
   }
@@ -401,6 +411,20 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 360px) and (max-width: 810px) {
+
+/* bloc slider */
+.carousel-caption{
+  top: 5%;
+}
+section h1 {
+  font-size: 1.8em;
+ color:white;
+ margin-bottom: 15px;
+} 
+section p a {
+  font-size: 1em;
+ color: white;
+} 
 
   /* page d'accueil */
   #propos {
@@ -447,6 +471,20 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 360px) {
+
+/* bloc slider */
+.carousel-caption{
+  top: 5%;
+}
+section h1 {
+  font-size: 1.3em;
+ color:white;
+ margin-bottom: -10px;
+} 
+section p a {
+  font-size: 0.8em;
+ color: white;
+} 
 
   /* page d'accueil */
   #propos {

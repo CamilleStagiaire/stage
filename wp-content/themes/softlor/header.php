@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>sticky-top
 <html <?php language_attributes(); ?>>
 
 <head>
@@ -12,7 +12,7 @@
 
 <body <?php body_class(); ?>>
 
-  <nav class="navbar navbar-expand-xl navbar-dark" style="background-color: <?= get_theme_mod('header_background'); ?>!important">
+  <nav class="navbar navbar-expand-xl sticky-top navbar-dark" style="background-color: <?= get_theme_mod('header_background'); ?>!important">
     <div class="container-fluid">
       <a class="navbar-brand ps-3" href="<?= home_url('/'); ?>">
         <img src="<?= get_template_directory_uri(); ?>/images/softlor.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
@@ -31,4 +31,4 @@
     </div>
   </nav>
 
-  <main class="container-fluid" style="padding-right: 0px; padding-left: 0px">
+  <main class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
