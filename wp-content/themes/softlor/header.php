@@ -1,4 +1,4 @@
-<!DOCTYPE html>sticky-top
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>

@@ -81,18 +81,30 @@ nav a.nav-link{
 }
 
 /* footer */
-footer p {
+#footer  {
+  padding-left:2%;
+}
+
+#footer p {
   padding: 0.5rem 1rem;
   font-weight: bolder;
 }
 
-footer .nav-link {
+#footer .nav-link {
   color: black;
   font-weight: bolder;
 }
 
-footer .nav-link:hover {
+#footer .nav-link:hover {
   color: white
+}
+
+#horaires h5{
+  font-weight: bold;
+}
+
+#horaires div:first-child, #horaires div:nth-child(2){
+ border-right: solid black 2px;
 }
 
 /* -------------------------------------------
