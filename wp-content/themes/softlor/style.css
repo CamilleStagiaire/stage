@@ -99,8 +99,9 @@ nav a.nav-link{
   color: white
 }
 
-#horaires h5{
+#horaires p{
   font-weight: bold;
+  font-size: 1.3em;
 }
 
 #horaires div:first-child, #horaires div:nth-child(2){
@@ -486,17 +487,20 @@ section p a {
 
 /* bloc slider */
 .carousel-caption{
-  top: 5%;
+  top: 0%;
 }
 section h1 {
-  font-size: 1.3em;
+  font-size: 1.2em;
  color:white;
  margin-bottom: -10px;
 } 
 section p a {
-  font-size: 0.8em;
+  font-size: 0.7em;
  color: white;
 } 
+#horaires div:first-child, #horaires div:nth-child(2){
+  border-right: none;
+ }
 
   /* page d'accueil */
   #propos {

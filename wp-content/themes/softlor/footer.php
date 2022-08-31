@@ -4,15 +4,13 @@
         <div class="row" style="background-color: <?= get_theme_mod('header_background'); ?>!important">
             <div id="horaires" class="row">
                 <div class="col-md-4">
-                    <h5 class="text-center">Horaires d'ouverture</h5>
                     <p class="text-center"><?= get_option('agence_horaire') ?></p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="text-center">Venir nous voir</h5>
+
                     <p class="text-center"><?= get_option('agence_adresse') ?></p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="text-center">Nous appeler</h5>
                     <p class="text-center"><?= get_option('agence_telephone') ?></p>
                 </div>
             </div>
